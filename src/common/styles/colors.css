@@ -1,0 +1,61 @@
+/*
+    Variables
+*/
+
+:root {
+    --cl-gray-0: #ECEFF1;
+    --cl-gray-1: #CFD8DC;
+    --cl-gray-2: #B0BEC5;
+    --cl-gray-3: #90A4AE;
+    --cl-gray-4: #78909C;
+    --cl-gray-5: #607D8B;
+    --cl-gray-6: #546E7A;
+    --cl-gray-7: #455A64;
+    --cl-gray-8: #37474F;
+    --cl-gray-9: #263238;
+}
+
+
+
+/*
+    Common
+*/
+
+body {
+    background: var(--cl-gray-0);
+    color: var(--cl-gray-9);
+}
+
+
+
+/*
+    Text color
+*/
+
+.cl-gray-0 {color: var(--cl-gray-0);}
+.cl-gray-1 {color: var(--cl-gray-1);}
+.cl-gray-2 {color: var(--cl-gray-2);}
+.cl-gray-3 {color: var(--cl-gray-3);}
+.cl-gray-4 {color: var(--cl-gray-4);}
+.cl-gray-5 {color: var(--cl-gray-5);}
+.cl-gray-6 {color: var(--cl-gray-6);}
+.cl-gray-7 {color: var(--cl-gray-7);}
+.cl-gray-8 {color: var(--cl-gray-8);}
+.cl-gray-9 {color: var(--cl-gray-9);}
+
+
+
+/*
+    Background color
+*/
+
+.bg-gray-0 {background: var(--cl-gray-0);}
+.bg-gray-1 {background: var(--cl-gray-1);}
+.bg-gray-2 {background: var(--cl-gray-2);}
+.bg-gray-3 {background: var(--cl-gray-3);}
+.bg-gray-4 {background: var(--cl-gray-4);}
+.bg-gray-5 {background: var(--cl-gray-5);}
+.bg-gray-6 {background: var(--cl-gray-6);}
+.bg-gray-7 {background: var(--cl-gray-7);}
+.bg-gray-8 {background: var(--cl-gray-8);}
+.bg-gray-9 {background: var(--cl-gray-9);}
