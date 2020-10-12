@@ -35,6 +35,14 @@
         color: #FFFFFF;
     }
 
+    .ui-button.link {
+        color: #37474F;
+        font-weight: 400;
+    }
+    .ui-button.link.active {
+        background: #DFE3E6;
+    }
+
 </style>
 
 
@@ -67,6 +75,7 @@
         },
 
         props: [
+            'to',
             'type',
             'text',
             'icon',

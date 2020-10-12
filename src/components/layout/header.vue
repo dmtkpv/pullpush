@@ -4,7 +4,18 @@
 
 <style>
 
-
+    .l-header {
+        position: fixed;
+        height: 70px;
+        width: 784px;
+        background: #ECEFF1;
+    }
+    .l-header .logo {
+        margin-right: 8px;
+    }
+    .l-header h1 {
+        font-size: 18px;
+    }
 
 </style>
 
@@ -15,8 +26,11 @@
 -->
 
 <template>
-    <header>
-        <ui-icon :icon="icon" />
+    <header class="l-header u-row">
+        <ui-icon class="logo" :name="icon" />
+        <h1>Collections</h1>
+        <div class="u-flex" />
+        <slot />
     </header>
 </template>
 
@@ -38,7 +52,11 @@
 
         props: [
             'icon'
-        ]
+        ],
+
+        mounted () {
+            console.log(this);
+        }
 
     }
 

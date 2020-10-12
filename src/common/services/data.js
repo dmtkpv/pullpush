@@ -1,34 +1,31 @@
-
+import idb from '@karpovsystems/idb'
 import API from '@/common/services/api'
+import Default from '@/configs/tables'
 
 
+let db = null;
 
 export default {
 
-    async refresh () {
-        // const db = await DB.init();
-        // // const cached = db.objectStoreNames.length;
-        // const cached = false;
-        // if (cached) {
-        //
-        // }
-        // else {
-        //     const {fields, _collections} = await API.table('fields', 'collections');
-        //     console.log(fields)
-        //     DB.add('_fields', fields).catch(error => {
-        //         console.log(error)
-        //     })
-        //
-        //     // if ()
-        //     // console.log(fields);
-        //
-        // }
+    db: null,
 
-        // const stores = DB.getStores();
+    async refresh () {
+        db = await idb(CMS.options.repo);
+        const cached = db.stores();
+        if (cached.length) {
+            // get commits
+            // delete if s commit exists
+        }
+        else {
+            const {_fields, _collections} = await API.table('_fields', '_collections');
+            await db.add('_collections', _collections);
+            await db.add('_fields', _fields || Default._fields);
+        }
     },
 
     async list (table, options = {}) {
-        const data = await DB.list(table, options);
+        const data = await db.get(table);
+        return data;
     }
 
 }

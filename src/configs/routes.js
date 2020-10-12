@@ -1,12 +1,21 @@
 import ui from '@/components/ui.vue';
 import login from '@/components/login.vue';
 import dashboard from '@/components/dashboard.vue';
+import redirect from '@/components/routes/redirect.vue';
 import collection from '@/components/routes/collection.vue';
 import collectionItem from '@/components/routes/collection.item.vue';
 import settingsCollection from '@/components/routes/settings.collections.vue';
 import settingsCollectionItem from '@/components/routes/settings.collections.item.vue';
 
 export default [
+    {
+        path: '/login',
+        component: login,
+    },
+    {
+        path: '/ui',
+        component: ui,
+    },
     {
         path: '/',
         component: dashboard,
@@ -26,15 +35,11 @@ export default [
             {
                 path: 'settings/collections/:id',
                 component: settingsCollectionItem
+            },
+            {
+                path: '*',
+                component: redirect
             }
         ]
-    },
-    {
-        path: '/login',
-        component: login,
-    },
-    {
-        path: '/ui',
-        component: ui,
     }
 ];

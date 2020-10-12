@@ -4,6 +4,9 @@
 
 <style>
 
+    .l-table {
+        background: #FFFFFF;
+    }
 
 
 </style>
@@ -15,9 +18,13 @@
 -->
 
 <template>
-
-
-
+    <div class="l-table">
+        <table>
+            <tr v-for="col in cols">
+                <td>Column {{col}}</td>
+            </tr>
+        </table>
+    </div>
 </template>
 
 
@@ -29,6 +36,12 @@
 <script>
 
     export default {
+
+        data () {
+            return {
+                cols: 1000
+            }
+        }
 
     }
 

@@ -6,7 +6,7 @@
     "build": "webpack --env=production"
   },
   "dependencies": {
-    "@karpovsystems/idb": "^1.0.3",
+    "@karpovsystems/idb": "latest",
     "axios": "^0.20.0",
     "papaparse": "^5.3.0",
     "vue": "^2.6.12",

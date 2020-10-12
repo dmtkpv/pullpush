@@ -5,7 +5,10 @@
 <style>
 
     #dashboard {
-        /*min-height: 100%;*/
+        max-width: 1024px;
+        min-height: 100%;
+        margin: 0 auto;
+        align-items: stretch;
     }
 
 
@@ -18,10 +21,10 @@
 -->
 
 <template>
-    <div id="dashboard">
+    <div id="dashboard" class="u-row">
         <layout-nav v-if="success" />
+        <router-view v-if="success" class="u-flex" />
         <layout-modal v-if="success" />
-        <router-view v-if="success" />
         <layout-error v-if="error" :error="error" />
         <ui-spinner size="40" v-if="loading" />
     </div>
@@ -58,6 +61,10 @@
             }
         },
 
+        beforeRouteEnter (from, to, next) {
+            API.authorized ? next() : next('/login');
+        },
+
         computed: {
 
             loading () {
@@ -66,19 +73,21 @@
 
         },
 
-        beforeRouteEnter (from, to, next) {
-            API.authorized ? next() : next('/login');
+        methods: {
+
+            onSuccess () {
+                this.success = true;
+
+            },
+
+            onError (error) {
+                this.error = error;
+            }
+
         },
 
-        async created () {
-
-            Data.refresh()
-                .then(() => {
-                    this.success = true;
-                })
-                // .catch(error => {
-                //     this.error = error;
-                // })
+        created () {
+            Data.refresh().then(this.onSuccess).catch(this.onError);
         }
 
 
