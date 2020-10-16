@@ -1,5 +1,0 @@
-id,collections,name,widget,options
-1,collections,id,text,
-3,collections,single,switch,
-4,collections,hidden,switch,
-5,collections,fields,m2m,"{""collection"": ""fields"", ""display"": ""name""}"

@@ -15,9 +15,15 @@
 -->
 
 <template>
+    <section class="u-col">
 
+        <layout-header :title="`Collection ${$route.params.name}`">
+            <ui-button icon="plus" />
+        </layout-header>
 
+        <layout-table class="l-content u-flex" />
 
+    </section>
 </template>
 
 
@@ -28,11 +34,23 @@
 
 <script>
 
-    import DB from '@/common/utils/db'
+    import layoutHeader from '@/components/layout/header.vue'
+    import layoutTable from '@/components/layout/table.vue'
+    import uiButton from '@/components/ui/button.vue'
 
     export default {
 
-        mounted () {
+        components: {
+            layoutHeader,
+            layoutTable,
+            uiButton
+        },
+
+        methods: {
+
+            add () {
+
+            }
 
         }
 

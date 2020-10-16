@@ -1,9 +1,0 @@
-{
-  "title": "Projects",
-  "fields": {
-    "collection": "fields",
-    "items": [1, 2, 3, 4, 5],
-    "display": "name"
-  }
-}
-

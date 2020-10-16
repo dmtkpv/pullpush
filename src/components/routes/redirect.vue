@@ -31,7 +31,7 @@
     export default {
 
         async beforeCreate () {
-            const collections = await Data.list('_collections');
+            const collections = await Data.list('_collections.csv');
             if (collections[0]) this.$router.replace(`/collections/${collections[0].id}`);
             else this.$router.replace(`/settings/collections`);
         }

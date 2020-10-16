@@ -4,42 +4,71 @@
 
 <style>
 
+
+    /* main */
+
     .l-nav {
-        width: 192px;
-        padding-bottom: 16px;
-        margin-right: 48px;
+        flex: 0 0 240px;
+        padding-bottom: 24px;
     }
-    .l-nav .fix {
-        position: fixed;
-        width: inherit;
-        min-height: 100%;
-    }
+
+
+    /* logo */
 
     .l-nav .logo {
-        font-family: 'Playball', cursive;
-        font-size: 24px;
-        line-height: 30px;
-        text-align: center;
-        color: #607D8B;
-        margin: 20px 0;
+        height: var(--h-header);
+        justify-content: center;
+        margin-right: 48px;
+    }
+    .l-nav .logo a {
+        color: var(--cl-gray-5);
+    }
+    .l-nav .logo a:hover {
+        color: var(--cl-gray-7);
     }
 
-    .l-nav .block {
-        margin-top: 48px;
-    }
-    .l-nav .block .label {
-        font-size: 12px;
-        font-weight: 500;
-        text-transform: uppercase;
-        color: #90A4AE;
-        margin-left: 18px;
-        margin-bottom: 16px;
 
-    }
-    .l-nav .block .ui-button {
+    /* push */
+
+    .l-nav .push {
         display: flex;
+        margin-right: 48px;
+        margin-bottom: 48px;
     }
 
+
+    /* scroll */
+
+    .l-nav .ui-scroll {
+        padding-right: 48px;
+    }
+
+
+    /* section */
+
+    .l-nav .section {
+        margin-bottom: 48px;
+    }
+    .l-nav .section .label {
+        position: sticky;
+        top: 0;
+        padding-left: 18px;
+        padding-bottom: 16px;
+        text-transform: uppercase;
+        color: var(--cl-gray-3);
+        background: var(--cl-gray-0);
+    }
+    .l-nav .section .ui-button {
+        display: flex;
+        margin-top: 4px;
+    }
+
+
+    /* logout */
+
+    .l-nav .logout {
+        flex-shrink: 0;
+    }
 
 
 </style>
@@ -51,32 +80,39 @@
 -->
 
 <template>
-    <nav class="l-nav">
-        <div class="fix u-col">
+    <nav class="l-nav u-col">
 
-            <a class="logo">{{ logo }}</a>
-            <ui-button icon="push" text="Push changes" />
+        <div class="logo u-row">
+            <a class="f2 t24">statix-test</a>
+        </div>
 
-            <div class="block">
-                <p class="label">Collections</p>
-                <ui-button type="link" text="About" />
-                <ui-button type="link" text="Projects" />
-                <ui-button type="link" text="Public" />
-                <ui-button type="link" text="Private" />
+        <ui-button class="push" icon="push" text="Push changes" />
+
+        <ui-scroll class="u-flex u-col">
+
+            <div class="section">
+                <p class="label t12 w5">Collections</p>
+                <ui-button type="nav" text="About" />
+                <ui-button type="nav" text="Projects"/>
+                <ui-button type="nav" text="Public" />
+                <ui-button type="nav" text="Private" />
             </div>
 
-            <div class="block">
-                <p class="label">Settings</p>
-                <ui-button type="link" icon="cube" text="Collections" class="active" />
-                <ui-button type="link" icon="users" text="Users" />
-                <ui-button type="link" icon="key" text="Roles" />
-                <ui-button type="link" icon="actions" text="Actions" />
+            <div class="section">
+                <p class="label t12 w5">Modules</p>
+                <ui-button type="nav" icon="media" text="Uploads" to="/settings/collections" />
+                <ui-button type="nav" icon="database" text="Collections" to="/settings/collections" />
+                <ui-button type="nav" icon="users" text="Users" />
+                <ui-button type="nav" icon="key" text="Roles" />
+                <ui-button type="nav" icon="actions" text="Actions" />
             </div>
 
             <div class="u-flex" />
-            <ui-button type="link" icon="logout" text="Sign out" class="logout" />
+            <ui-button type="nav" icon="logout" text="Sign out" class="logout" to="/login" />
 
-        </div>
+        </ui-scroll>
+
+
     </nav>
 </template>
 
@@ -88,25 +124,14 @@
 
 <script>
 
-    import Data from '@/common/services/data'
     import uiButton from '@/components/ui/button.vue'
+    import uiScroll from '@/components/ui/scroll.vue'
 
     export default {
 
         components: {
-            uiButton
-        },
-
-        data () {
-            return {
-                collections: [],
-                logo: CMS.options.repo
-            }
-        },
-
-        async created () {
-            // this.collections = await Data.list('collections');
-            // console.log(this.collections)
+            uiButton,
+            uiScroll
         }
 
     }

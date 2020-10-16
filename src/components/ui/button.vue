@@ -14,8 +14,6 @@
         height: 40px;
         padding: 0 18px;
         border-radius: 3px;
-        font-weight: 500;
-        font-size: 15px;
     }
     .ui-button .ui-icon:not(:last-child) {
         margin-left: -4px;
@@ -23,25 +21,45 @@
     }
 
 
-    /* types */
+    /* icon */
 
-    .ui-button.icon {
+    .ui-button-icon {
         width: 40px;
         padding: 0;
         justify-content: center;
     }
-    .ui-button.default {
-        background: #263238;
-        color: #FFFFFF;
+
+
+    /* default */
+
+    .ui-button-default {
+        background: var(--cl-gray-9);
+        color: var(--cl-white);
     }
 
-    .ui-button.link {
-        color: #37474F;
-        font-weight: 400;
+
+    /* nav */
+
+    .ui-button-nav {
+        color: var(--cl-gray-8);
     }
-    .ui-button.link.active {
-        background: #DFE3E6;
+    .ui-button-nav:hover {
+        background: var(--cl-gray-033);
     }
+    .ui-button-nav.active {
+        background: var(--cl-gray-066);
+    }
+
+
+    /* link */
+
+    /*.ui-button-link {*/
+    /*    color: var(--cl-gray-6);*/
+    /*}*/
+    /*.ui-button-link:hover {*/
+    /*    text-decoration: underline;*/
+    /*    color: var(--cl-gray-9);*/
+    /*}*/
 
 </style>
 
@@ -52,10 +70,10 @@
 -->
 
 <template>
-    <a class="ui-button" :class="[type || 'default', {disabled, icon: !text}]">
+    <component :is="tag" class="ui-button" :class="[`ui-button-${type || 'default'}`, {disabled, 'ui-button-icon': !text}]" :to="to">
         <ui-icon v-if="icon" :name="icon" />
         <span v-if="text" v-text="text" />
-    </a>
+    </component>
 </template>
 
 
@@ -80,7 +98,15 @@
             'text',
             'icon',
             'disabled'
-        ]
+        ],
+
+        computed: {
+
+            tag () {
+                return this.to ? 'router-link' : 'a';
+            }
+
+        }
 
     }
 

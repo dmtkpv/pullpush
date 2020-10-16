@@ -18,7 +18,7 @@
 -->
 
 <template>
-    <component class="ui-icon" :is="name" />
+    <component class="ui-icon" :is="name" :style="style" />
 </template>
 
 
@@ -35,9 +35,25 @@
 
         components: icons,
 
-        props: [
-            'name'
-        ]
+        props: {
+            name: {
+
+            },
+            size: {
+                default: 22
+            }
+        },
+
+        computed: {
+
+            style () {
+                return {
+                    width: this.size + 'px',
+                    height: this.size + 'px',
+                }
+            }
+
+        }
 
     }
 

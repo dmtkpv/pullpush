@@ -4,6 +4,7 @@
 
 import '@/common/styles/base.css'
 import '@/common/styles/colors.css'
+import '@/common/styles/sizes.css'
 import '@/common/styles/typography.css'
 import '@/common/styles/utils.css'
 // import '@/configs/components'

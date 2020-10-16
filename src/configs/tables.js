@@ -32,6 +32,29 @@ export default {
                 display: 'name'
             }
         }
+    ],
+
+    _collections: [
+        {
+            id: 'about',
+            single: true,
+            hidden: false
+        },
+        {
+            id: 'projects',
+            single: false,
+            hidden: false
+        },
+        {
+            id: 'public',
+            single: false,
+            hidden: false
+        },
+        {
+            id: 'private',
+            single: false,
+            hidden: false
+        }
     ]
 
 }

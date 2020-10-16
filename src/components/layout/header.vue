@@ -5,9 +5,10 @@
 <style>
 
     .l-header {
-        position: fixed;
-        height: 70px;
-        width: 784px;
+        position: sticky;
+        top: 0;
+        height: var(--h-header);
+        /*width: var(--w-section);*/
         background: #ECEFF1;
     }
     .l-header .logo {
@@ -28,7 +29,7 @@
 <template>
     <header class="l-header u-row">
         <ui-icon class="logo" :name="icon" />
-        <h1>Collections</h1>
+        <h1>{{title}}</h1>
         <div class="u-flex" />
         <slot />
     </header>
@@ -51,11 +52,12 @@
         },
 
         props: [
-            'icon'
+            'icon',
+            'title'
         ],
 
         mounted () {
-            console.log(this);
+
         }
 
     }

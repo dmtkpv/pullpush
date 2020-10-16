@@ -5,7 +5,7 @@
 <style>
 
     .l-table {
-        background: #FFFFFF;
+        overflow: auto;
     }
 
 

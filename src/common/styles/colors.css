@@ -4,6 +4,8 @@
 
 :root {
     --cl-gray-0: #ECEFF1;
+    --cl-gray-033: #E4E7EA;
+    --cl-gray-066: #DAE0E3;
     --cl-gray-1: #CFD8DC;
     --cl-gray-2: #B0BEC5;
     --cl-gray-3: #90A4AE;
@@ -13,6 +15,7 @@
     --cl-gray-7: #455A64;
     --cl-gray-8: #37474F;
     --cl-gray-9: #263238;
+    --cl-white: #FFFFFF;
 }
 
 
@@ -42,6 +45,7 @@ body {
 .cl-gray-7 {color: var(--cl-gray-7);}
 .cl-gray-8 {color: var(--cl-gray-8);}
 .cl-gray-9 {color: var(--cl-gray-9);}
+.cl-white {color: var(--cl-white);}
 
 
 
@@ -59,3 +63,4 @@ body {
 .bg-gray-7 {background: var(--cl-gray-7);}
 .bg-gray-8 {background: var(--cl-gray-8);}
 .bg-gray-9 {background: var(--cl-gray-9);}
+.bg-white {background: var(--cl-white);}
