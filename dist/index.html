@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script src="/pullpush.js"></script>
+    <script src="pullpush.js"></script>
 </head>
 <body>
-
 <script>
+
     CMS.init({
         username: 'karpovsystems',
         repo: 'statix-test',
@@ -15,7 +15,11 @@
         databaseFolder: 'database',
         uploadsFolder: 'uploads',
     });
-</script>
 
+    CMS.on('item.read', () => {
+        throw new Error('dfdfdf');
+    })
+
+</script>
 </body>
 </html>

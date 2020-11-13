@@ -4,7 +4,13 @@
 
 <style>
 
-
+    .l-form .field {
+        margin-bottom: 16px;
+    }
+    .l-form .field b {
+        display: block;
+        margin-bottom: 8px;
+    }
 
 </style>
 
@@ -15,9 +21,12 @@
 -->
 
 <template>
-
-
-
+    <div class="l-form">
+        <div class="field" v-for="field in fields">
+            <b>{{ field.key }} <span v-if="field.required">*</span></b>
+            <component :is="field.widget" :options="field.options" v-model="values[field.key]" />
+        </div>
+    </div>
 </template>
 
 
@@ -28,12 +37,14 @@
 
 <script>
 
-    import {widgets} from '@/sdasd/asd/asd'
-
-    console.log(Object.keys(widgets));
 
     export default {
-        components: widgets
+
+        props: [
+            'fields',
+            'values'
+        ]
+
     }
 
 </script>

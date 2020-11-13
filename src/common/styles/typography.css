@@ -1,55 +1,9 @@
-/*
-    Common
-*/
-
-body {
-    font-family: Roboto, sans-serif;
-    font-size: 16px;
-    line-height: 1.2;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
+h1 {
+    font-size: 32px;
 }
-.ui-button {
-    font-weight: 500;
-    font-size: 15px;
+h2 {
+    font-size: 24px;
 }
-.ui-button-nav,
-.ui-button-link {
-    font-weight: 400;
+h3 {
+    font-size: 18px;
 }
-
-
-
-/*
-    Fonts
-*/
-
-.f1 {font-family: Roboto, sans-serif;}
-.f2 {font-family: Playball, cursive;}
-
-
-
-/*
-    Weights
-*/
-
-.w4 {font-weight: 400;}
-.w5 {font-weight: 500;}
-
-
-
-/*
-    Sizes
-*/
-
-/*.t10 {font-size: 10px;}*/
-.t12 {font-size: 12px;}
-/*.t14 {font-size: 14px;}*/
-/*.t16 {font-size: 16px;}*/
-/*.t20 {font-size: 20px;}*/
-.t24 {font-size: 24px;}
-/*.t32 {font-size: 32px;}*/
-.t40 {font-size: 40px;}
-
-
-

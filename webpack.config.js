@@ -39,7 +39,13 @@ const Configure = mode => ({
     devServer: {
         contentBase: 'dist',
         compress: true,
-        port: 49031
+        port: 49031,
+        clientLogLevel: 'none',
+        setup (app) {
+            // app.get('/api', (req, res) => {
+            //     res.send(require(`./data/${req.query.path}`))
+            // });
+        }
     },
 
     resolve: {

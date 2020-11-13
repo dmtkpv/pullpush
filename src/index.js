@@ -3,32 +3,25 @@
 // ------------------
 
 import '@/common/styles/base.css'
-import '@/common/styles/colors.css'
-import '@/common/styles/sizes.css'
 import '@/common/styles/typography.css'
 import '@/common/styles/utils.css'
-// import '@/configs/components'
 
-import Vue from 'vue';
+import Vue from 'vue'
+import Router from 'vue-router'
+import app from '@/components/app.vue'
 import router from '@/router'
-
-
-//
-// register('@/components/widgets');
-// register('@/components/views');
-// register('@/common/icons');
+import widget from '@/widgets'
 
 
 
 // ------------------
-// Load fonts
+// Vue config
 // ------------------
 
-const $fonts = document.createElement('link');
-$fonts.setAttribute('rel', 'stylesheet');
-$fonts.setAttribute('type', 'text/css');
-$fonts.setAttribute('href', 'https://fonts.googleapis.com/css2?family=Roboto:wght@400;500|Playball&display=block');
-document.head.appendChild($fonts);
+Vue.use(Router);
+Vue.config.silent = true;
+Vue.config.productionTip = false;
+Vue.config.devtools = false;
 
 
 
@@ -36,29 +29,16 @@ document.head.appendChild($fonts);
 // Exports
 // ------------------
 
-export function init (options) {
-
-
-    // set options
-
-    CMS.options = Object.assign({
-        branch: 'master',
-        databaseFolder: 'database',
-        uploadsFolder: 'uploads',
-    }, options);
-
-
-    // create root node
-
+function init () {
     const $app = document.createElement('div');
-    document.body.appendChild($app);
-
-
-    // initialize Vue app
-
     new Vue({
-        el: $app,
+        el: document.body.appendChild($app),
         router,
-        render: h => h('router-view')
+        render: h => h(app)
     });
 }
+
+export { init, widget }
+
+
+
