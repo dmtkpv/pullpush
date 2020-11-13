@@ -1,4 +1,23 @@
 ---
 label: project
 hide_body: false
-fields: []
+fields:
+- name: name
+  type: text
+  config:
+    required: false
+  label: Name
+- name: notes
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Notes
+- name: cover
+  type: file
+  config:
+    maxSize: 64
+  label: Cover
